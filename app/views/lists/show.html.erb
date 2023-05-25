@@ -1,0 +1,19 @@
+<p>list</p>
+  <%= @list.name %>
+
+    <ul>
+      <li> <%=  %> </li>
+    </ul>
+
+
+<%= link_to 'Add movie to this list', new_list_bookmark_path(@list) %>
+
+<%= link_to 'delete this list', list_path(@list) %>
+
+
+<% simple_form_for @list do |f| %>
+ <% f.association Movie.all
+ <%= movie.title %>
+<% end %>
+<%= f.association :movie, collection: Movie.all(order: 'title')
+ %>
